@@ -13,6 +13,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     var posts: [[String: Any]] = []
+    var refreshControl: UIRefreshControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +23,17 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.dataSource = self
         tableView.rowHeight = 250
         
-        
         fectchPhoto()
+        
+        // Initialize a UIRefreshControl
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(PhotosViewController.refreshControlAction(_:)), for: .valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
+        // add refresh control to table view
+        tableView.insertSubview(refreshControl, at: 0)
+        
+        
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,10 +92,20 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                 
                 // TODO: Reload the table view
                 self.tableView.reloadData()
+                // Tell the refreshControl to stop spinning
+                self.refreshControl.endRefreshing()
             }
         }
         task.resume()
         
+    }
+    
+    // Makes a network request to get updated data
+    // Updates the tableView with the new data
+    // Hides the RefreshControl
+    @objc func refreshControlAction(_ refreshControl: UIRefreshControl) {
+        
+        fectchPhoto()
     }
     
     
