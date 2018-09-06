@@ -41,6 +41,27 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         
     }
     
+    func wifiAlert(title:String="No Connection", message: String = "The Internet connetion appears to be offline."){
+        /*
+        let alertController = UIAlertController(title : title, message: message, preferredStyle: .alert)
+        
+        let dismissAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default) { (action) in
+            // handle cancel response here. Doing nothing will dismiss the view.
+        }
+        // add the cancel action to the alertController
+        alertController.addAction(dismissAction)
+ */
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        //let dismissAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default)
+        let dismissAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default) { (action) in
+            // handle cancel response here. Doing nothing will dismiss the view.
+            self.fectchPhoto()
+        }
+        alertController.addAction(dismissAction)
+        
+        self.present(alertController, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
@@ -80,6 +101,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         let task = session.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print(error.localizedDescription)
+                self.wifiAlert()
             } else if let data = data,
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                 print(dataDictionary)
