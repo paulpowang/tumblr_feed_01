@@ -87,6 +87,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         
+        
         return cell
     }
     
@@ -128,6 +129,15 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     @objc func refreshControlAction(_ refreshControl: UIRefreshControl) {
         
         fectchPhoto()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell){
+            let post = posts[indexPath.row]
+            let photoDetailViewController = segue.destination as! PhotoDetailViewController
+            photoDetailViewController.post = post
+        }
     }
     
     

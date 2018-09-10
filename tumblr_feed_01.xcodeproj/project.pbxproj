@@ -18,6 +18,7 @@
 		DAE314EF213F2CBA00DC0149 /* tumblr_feed_01UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE314EE213F2CBA00DC0149 /* tumblr_feed_01UITests.swift */; };
 		DAE314FD213F31B800DC0149 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE314FC213F31B800DC0149 /* PhotosViewController.swift */; };
 		DAE314FF213F68D300DC0149 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE314FE213F68D300DC0149 /* PhotoCell.swift */; };
+		DAE978112146392000C4DEB7 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE978102146392000C4DEB7 /* PhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		DAE314F0213F2CBA00DC0149 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAE314FC213F31B800DC0149 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		DAE314FE213F68D300DC0149 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		DAE978102146392000C4DEB7 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		FC8421DE3301A47A89ADB945 /* Pods_tumblr_feed_01Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tumblr_feed_01Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE42D904326F10F82B35A54B /* Pods-tumblr_feed_01.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tumblr_feed_01.release.xcconfig"; path = "Pods/Target Support Files/Pods-tumblr_feed_01/Pods-tumblr_feed_01.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +135,7 @@
 				DAE314D7213F2CBA00DC0149 /* LaunchScreen.storyboard */,
 				DAE314DA213F2CBA00DC0149 /* Info.plist */,
 				DAE314FE213F68D300DC0149 /* PhotoCell.swift */,
+				DAE978102146392000C4DEB7 /* PhotoDetailViewController.swift */,
 			);
 			path = tumblr_feed_01;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 			files = (
 				DAE314CF213F2CB900DC0149 /* AppDelegate.swift in Sources */,
 				DAE314FF213F68D300DC0149 /* PhotoCell.swift in Sources */,
+				DAE978112146392000C4DEB7 /* PhotoDetailViewController.swift in Sources */,
 				DAE314FD213F31B800DC0149 /* PhotosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
